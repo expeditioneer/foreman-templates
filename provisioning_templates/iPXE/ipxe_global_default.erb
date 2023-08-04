@@ -1,20 +1,3 @@
-<%#
-name: iPXE global default
-description: |-
-  The template to render iPXE bootloader configuration for unknown hosts.
-  The output is used for unknown hosts (typically discovery flow) and it
-  is not deployed to the TFTP proxy (unlike other default templates).
-  Do not associate or change the name.
-snippet: false
-model: ProvisioningTemplate
-kind: iPXE
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 #!ipxe
 
 echo Opening global default menu in 15 seconds...

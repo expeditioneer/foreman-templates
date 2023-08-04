@@ -1,20 +1,3 @@
-<%#
-name: PXEGrub2 default local boot
-description: |-
-  The template to render Grub2 bootloader configuration for provisioned hosts,
-  that still boot from the network.
-  Hosts are instructed to boot from the first local medium.
-  Do not associate or change the name.
-snippet: false
-model: ProvisioningTemplate
-kind: PXEGrub2
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 set default=<%= global_setting("default_pxe_item_local", "local") %>
 set timeout=20
 echo Default PXE local template entry is set to '<%= global_setting("default_pxe_item_local", "local") %>'

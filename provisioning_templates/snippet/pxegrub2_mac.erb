@@ -1,17 +1,3 @@
-<%#
-name: pxegrub2_mac
-description: Snippet that is included in all PXEGrub2 templates in order to find MAC-based
-  configuration on TFTP/HTTPBoot. Grub2 in Red Hat is patched with this feature, however,
-  Debian/Ubuntu or other distributions do not have this patch.
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 echo "Trying /httpboot/grub2/grub.cfg-$net_default_mac"
 configfile "/httpboot/grub2/grub.cfg-$net_default_mac"
 

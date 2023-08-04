@@ -1,15 +1,3 @@
-<%#
-name: preseed_kernel_options
-description: options for the kernel / preseed startup initialization
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 <%
   is_debian = @host.operatingsystem.name == 'Debian'
   hostname = @host.name

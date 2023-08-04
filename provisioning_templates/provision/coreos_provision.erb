@@ -1,18 +1,3 @@
-<%#
-name: CoreOS provision
-description: |-
-  Provisioning template for the CoreOS Container Linux distribution.
-  This does not work for Fedora CoreOS or Flatcar Container Linux, which use Ignition instead.
-snippet: false
-model: ProvisioningTemplate
-kind: provision
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 %>
 <%- if host_param('ignition_template') -%>
 <%= host_param('ignition_template') %>

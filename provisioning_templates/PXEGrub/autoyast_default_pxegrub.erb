@@ -1,18 +1,3 @@
-<%#
-name: AutoYaST default PXEGrub
-description: |-
-  The template to render PXEGrub bootloader configuration for AutoYaST based distributions.
-  The output is deployed on the host's subnet TFTP proxy.
-snippet: false
-model: ProvisioningTemplate
-kind: PXEGrub
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 # This file was deployed via '<%= template_name %>' template
 
 default=0

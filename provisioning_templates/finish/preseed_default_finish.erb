@@ -1,18 +1,3 @@
-<%#
-name: Preseed default finish
-description: |-
-  A finish template executed at the end of a network provisioning done using preseed based
-  installer, typically DEB based distributions. This template renders to a shell script.
-snippet: false
-model: ProvisioningTemplate
-kind: finish
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 <%
   # safemode renderer does not support unary negation
   puppet_enabled = !host_param_true?('skip-puppet-setup') && (host_puppet_server.present? || host_param_true?('force-puppet'))

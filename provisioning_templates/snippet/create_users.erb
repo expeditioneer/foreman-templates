@@ -1,20 +1,3 @@
-<%#
-name: create_users
-description: |-
-  This snippet can be used to create user accounts during the provisioning
-  based on the Host owner. If the owner is set to the user group, all users
-  from that user group will have an account created. Each such account will
-  be also configured with the respective SSH authorized keys uploaded to the
-  Foreman.
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 <%- users = @host.owner_type == 'Usergroup' ? @host.owner.all_users : [@host.owner] -%>
 <%- users.each do |user| -%>
 <%=   "useradd #{user.login}" %>

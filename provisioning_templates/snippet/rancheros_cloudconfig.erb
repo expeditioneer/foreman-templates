@@ -1,15 +1,3 @@
-<%#
-name: rancheros_cloudconfig
-description: The cloud config used for the RancherOS installation
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 #cloud-config
 hostname: <%= @host.shortname %>
 rancher:

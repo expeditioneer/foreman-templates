@@ -1,8 +1,3 @@
-<%#
-name: Host - Enabled Repositories
-snippet: false
-model: ReportTemplate
--%>
 <%- report_headers 'Host ID', 'Host Name', 'Repository Name', 'Package Count' -%>
 <%- load_hosts(includes: [:content_facet => :bound_repositories]).each_record do |host| -%>
 <%-   (host.bound_repositories || []).each do |repo| -%>

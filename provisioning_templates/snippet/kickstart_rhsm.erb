@@ -1,15 +1,3 @@
-<%#
-name: kickstart_rhsm
-description: Generate Anaconda RHSM configuration for Red Hat OS registration
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 <%
   subman_keys = host_param('kt_activation_keys') || host_param('activation_key')
   subman_org = (plugin_present?('katello') && @host.rhsm_organization_label) || host_param('subscription_manager_org')

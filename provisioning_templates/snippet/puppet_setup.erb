@@ -1,22 +1,3 @@
-<%#
-name: puppet_setup
-description: |-
-  Bootstraps the Puppet agent and performs one run to create a certificate request.
-
-  In more details it installs a Puppet agent, creates the necessary configuration files,
-  enables the Puppet agent service and performs a single run with a specified tag.
-  By default the tag `no_such_tag` is used to generate an empty run.
-  An empty run can be used for the agent to detect it's missing a client certificate
-  and ask for a new one from the host's Puppet CA.
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 <%
 os_family = @host.operatingsystem.family
 os_major  = @host.operatingsystem.major.to_i

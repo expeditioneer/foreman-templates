@@ -1,27 +1,3 @@
-<%#
-name: Preseed Autoinstall cloud-init user data
-description: |-
-  The provisioning template for Autoinstall based distributions. To customize the installation,
-  modify the host parameters
-
-  This template accepts the following parameters:
-  - lang: string (default="en_US.UTF-8")
-  - keyboard: string (default="us")
-  - package_upgrade: boolean (default=false)
-  - remote_execution_ssh_keys: string (default="")
-  - username_to_create: string (default="root")
-  - realname_to_create: string (default=username_to_create)
-  - password_to_create: string (default=@host.root_pass)
-snippet: false
-model: ProvisioningTemplate
-kind: user_data
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 <%-
 username_to_create = host_param('username_to_create', 'root')
 realname_to_create = host_param('realname_to_create') || username_to_create

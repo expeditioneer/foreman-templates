@@ -1,18 +1,3 @@
-<%#
-name: saltstack_minion
-description: |-
-  Generates a Salt minion configuration file which is required for the Salt bootstraping.
-  The Salt master is configured based on the host parameter called "salt_master".
-  It can also statically assign grains based on the "salt_grains" host parameter.
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 master: <%= host_param('salt_master') %>
 log_level: warning
 

@@ -1,24 +1,3 @@
-<%#
-name: Grubby default
-description: |-
-  Script that can be manually downloaded to a server to reprovision it without booting from network.
-  Grubby compatibility package must be installed. WARNING: It will immediately reconfigure
-  bootloader and reprovision the node.
-
-  Usage:
-  curl https://foreman/unattended/script -o reprovision.sh
-  bash reprovision.sh
-  reboot
-snippet: false
-model: ProvisioningTemplate
-kind: script
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 #!/bin/bash
 
 KERNEL="/boot/kernel"

@@ -1,20 +1,3 @@
-<%#
-name: AutoYaST default user data
-description: |-
-  This template is used during image based provisioning, when the image is configured to use user-data.
-  The output is a shell script that cloud-init runs to configures the VM
-  booted from the image. The image must have cloud-init installed in order for this to work.
-  This script can be used with OpenSUSE and SLES images.
-snippet: false
-model: ProvisioningTemplate
-kind: user_data
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 <%
   # safemode renderer does not support unary negation
   puppet_enabled = !host_param_true?('skip-puppet-setup') && (host_puppet_server.present? || host_param_true?('force-puppet'))

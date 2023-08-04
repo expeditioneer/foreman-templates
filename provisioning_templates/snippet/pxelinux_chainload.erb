@@ -1,16 +1,3 @@
-<%#
-name: pxelinux_chainload
-description: Snippet used to chainload BIOS HDD when booted from network. Used in
-  PXELinux global and local templates.
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 LABEL local
   MENU LABEL Default local boot
   LOCALBOOT 0

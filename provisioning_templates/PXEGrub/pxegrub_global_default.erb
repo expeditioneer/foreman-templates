@@ -1,20 +1,3 @@
-<%#
-name: PXEGrub global default
-description: |-
-  The template to render Grub bootloader configuration for unknown hosts.
-  The output is deployed on the host's subnet TFTP proxy.
-  Do not associate or change the name.
-  This template is for legacy Grub 1.x, you are probably looking for Grub2.
-snippet: false
-model: ProvisioningTemplate
-kind: PXEGrub
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 <%
   # Grub1 only supports numeric default statement, this allows conversion to number. First define
   # array of directories we will search for EFI booloaders:

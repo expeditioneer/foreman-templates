@@ -1,17 +1,3 @@
-<%#
-name: csr_attributes.yaml
-description: |-
-  Used to configure custom CSR attributes of a Puppet CA when bootstrapping a puppet agent
-  in case puppet_token_whitelisting provider is used. See puppet_setup snipper for more details.
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 ---
 custom_attributes:
   1.2.840.113549.1.9.7: "<%= @host.puppetca_token.value %>"

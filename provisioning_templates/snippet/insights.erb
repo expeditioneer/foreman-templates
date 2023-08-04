@@ -1,17 +1,3 @@
-<%#
-name: insights
-description: |-
-  Installs and registers the insights client on RHEL, typically used
-  in the Kickstart provisioning and host init templates.
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 <% if @host.operatingsystem.name == 'RedHat' -%>
 echo '#'
 echo '# Installing Insights client'

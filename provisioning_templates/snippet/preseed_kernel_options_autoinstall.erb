@@ -1,15 +1,3 @@
-<%#
-name: preseed_kernel_options_autoinstall
-description: options for the kernel / preseed startup initialization
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 <%
   hostname = @host.name
   domain = @host.domain

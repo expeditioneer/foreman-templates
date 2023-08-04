@@ -1,18 +1,3 @@
-<%#
-name: Alterator default
-description: |-
-  Provisioning template for the ALTLinux installer
-  see https://projects.theforeman.org/issues/3377 for more details
-snippet: false
-model: ProvisioningTemplate
-kind: provision
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 <% if @metadata.to_s == '/vm-profile.scm' -%>
 <%= @host.diskLayout %>
 <% elsif @metadata.to_s == '/pkg-groups.tar' -%>

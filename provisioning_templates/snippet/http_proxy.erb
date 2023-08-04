@@ -1,17 +1,3 @@
-<%#
-name: http_proxy
-description: |-
-  Configures common HTTP proxy ENV variables based on the host_proxy
-  host parameter. Currently not used by any shipped template.
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 <% if (proxy = host_param("http_proxy")) -%>
 http_proxy=<%= proxy %>
 export http_proxy

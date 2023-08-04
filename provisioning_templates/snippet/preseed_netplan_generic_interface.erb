@@ -1,14 +1,3 @@
-<%#
-name: preseed_netplan_generic_interface
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 <%- if @interface.identifier.blank? -%>
     id0:
         match:

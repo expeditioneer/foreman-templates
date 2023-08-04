@@ -1,18 +1,3 @@
-<%#
-name: AutoYaST default PXELinux
-description: |-
-  The template to render PXELinux bootloader configuration for SLES and OpenSUSE distributions.
-  The output is deployed on the host's subnet TFTP proxy.
-snippet: false
-model: ProvisioningTemplate
-kind: PXELinux
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 <%
 extra_args = []
 if host_param('http-proxy') && host_param('http-proxy-port')

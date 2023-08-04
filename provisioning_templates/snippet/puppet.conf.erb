@@ -1,18 +1,3 @@
-<%#
-name: puppet.conf
-description: |-
-  Generates a puppet.conf file which is required for the puppet agent bootstraping.
-  The puppet server and CA is configured based on the host configuration. It supports
-  Puppet 5 and newer.
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 <%
   os_family = @host.operatingsystem.family
   os_name   = @host.operatingsystem.name

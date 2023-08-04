@@ -1,18 +1,3 @@
-<%#
-name: preseed_netplan_setup
-description: |-
-  This will configure your host networking, it configures your
-  primary interface as well as other NICs like BOND, BRIDGE, VLAN and Alias
-  interfaces.
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 <% os_major = @host.operatingsystem.major.to_i -%>
 <% os_minor = @host.operatingsystem.minor.to_i -%>
 <%- -%>

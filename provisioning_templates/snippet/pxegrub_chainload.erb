@@ -1,16 +1,3 @@
-<%#
-name: pxegrub_chainload
-description: Snippet used to chainload BIOS HDD when booted from network. Used in
-  PXEGrub global and local templates.
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 <%
   # paths variable must be passed into the snippet, otherwise no EFI items are rendered
   if !@paths.nil? && @paths.size > 1

@@ -1,18 +1,3 @@
-<%#
-name: fix_hosts
-description: |-
-  Used in user_data templates for setting the correct content of the /etc/hosts file.
-  The goal is to potentially fix incorrect hosts file that is baked in the image
-  used for the provisioning.
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 echo "<%= @host.shortname %>" > /etc/hostname
 <% if @host.operatingsystem.family == 'Redhat' && @host.operatingsystem.major.to_i == 6 %>
 hostname <%= @host %>

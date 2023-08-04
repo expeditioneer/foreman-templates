@@ -1,17 +1,3 @@
-<%#
-name: ansible_tower_callback_service
-description: |-
-  The content of a systemd service for running Ansible Tower / AWX callback script one-time.
-  Used in the ansible_provisioning_callback snippet for systemd enabled systems.
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 [Unit]
 Description=Provisioning callback to Ansible Tower
 Wants=network-online.target

@@ -1,15 +1,3 @@
-<%#
-name: saltstack_setup
-description: this snippet will configure the Saltstack Minion
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 <%
 etc_path = (@host.operatingsystem.family == 'Freebsd') ? '/usr/local/etc/salt' : '/etc/salt'
 bin_path = (@host.operatingsystem.family == 'Freebsd') ? '/usr/local/bin' : '/usr/bin'

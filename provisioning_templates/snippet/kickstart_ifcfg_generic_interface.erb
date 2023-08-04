@@ -1,18 +1,3 @@
-<%#
-name: kickstart_ifcfg_generic_interface
-description: |-
-  Generates the ifcfg configuration file for a generic network interface.
-  This is typically used by other templates and snippets that pass interface
-  object to be configured. It is not expected to be used directly.
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Ceph
-- Management
-- OKD
-locations:
-- Default Location
--%>
 <%- primary = @interface.primary ? 'yes' : 'no' -%>
 BOOTPROTO="<%= @dhcp ? 'dhcp' : 'none' -%>"
 <%- unless @dhcp || @subnet.nil? -%>
