@@ -136,7 +136,14 @@ firewall --service=ssh
 <% end -%>
 authselect --useshadow --passalgo=<%= @host.operatingsystem.password_hash.downcase || 'sha256' %> --kickstart
 
+<% if os_major >= 9 %>
+timezone --utc <%= host_param('time-zone') || 'UTC' %>
+<% if host_param('ntp-server')%>
+timesource --ntp-server <%= host_param('ntp-server') %>
+<% end %>
+<% else %>
 timezone --utc <%= host_param('time-zone') || 'UTC' %> <%= host_param('ntp-server') ? "--ntpservers #{host_param('ntp-server')}" : '' %>
+<% end -%>
 
 <% if rhel_compatible -%>
 services --disabled gpm,sendmail,cups,pcmcia,isdn,rawdevices,hpoj,bluetooth,openibd,avahi-daemon,avahi-dnsconfd,hidd,hplip,pcscd
@@ -173,7 +180,7 @@ reboot<% if host_param_true?('install_reboot_kexec') %> --kexec<% end %>
 yum
 chrony
 -ntp
- <% if rhel_compatible && os_major < 9 -%>
+<% if rhel_compatible && os_major < 9 -%>
 wget
 <% end -%>
 <% if host_param_true?('fips_enabled') -%>
